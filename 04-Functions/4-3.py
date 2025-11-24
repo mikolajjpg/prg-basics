@@ -16,10 +16,10 @@ def triangle_area(a,b,c):
     area = math.sqrt(p *(p -a)*(p -b)*(p -c)) 
     return area
 for i in range(3):
-    a = float(input('Enter lenght of side'))
-    b = float(input('Enter lenght of side'))
-    c = float(input('Enter lenght of side'))
+    a = int(input('Enter lenght of side'))
+    b = int(input('Enter lenght of side'))
+    c = int(input('Enter lenght of side'))
 
-    print(f'The area of ​​a triangle with sides 3,4,5 is {triangle_area(a,b,c)}')
+    print(f'The area of ​​a triangle with sides {a},{b},{c} is {triangle_area(a,b,c)}')
 #print(f'The area of ​​a triangle with sides 5,12,13 is {triangle_area(a,b,c)}')
 #print(f'The area of ​​a triangle with sides 7,24,25 is {triangle_area(a,b,c)}')
