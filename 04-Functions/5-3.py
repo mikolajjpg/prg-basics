@@ -16,7 +16,7 @@
 
 # Reads employee's data from keyboard
 
-import keyboard
+from keyboard import *
 
 first_name = input_string('Enter name: ')
 last_name = input_string('Enter surname: ')
@@ -30,5 +30,5 @@ print('===========')
 print('Name:', ...)
 print(...)
 print(...)
-if is_salary_hidden == n:
+if is_salary_hidden == 'n':
     print('Salary')
