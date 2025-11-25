@@ -16,7 +16,7 @@
 
 # Reads employee's data from keyboard
 
-from keyboard import *
+from keyboard2 import *
 
 first_name = input_string('Enter name: ')
 last_name = input_string('Enter surname: ')
@@ -27,8 +27,10 @@ is_salary_hidden = input_boolean('Hide salary? (y/n)')
 # Prints employee's record
 print('DATA RECORD')
 print('===========')
-print('Name:', ...)
-print(...)
-print(...)
-if is_salary_hidden == 'n':
-    print('Salary')
+print(f'Name: {first_name}')
+print(f'Surname: {last_name}')
+print(f'Age: {age}')
+if is_salary_hidden == False:
+    print(f'Salary: {salary}')
+else:
+    pass
