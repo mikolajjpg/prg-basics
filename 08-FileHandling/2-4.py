@@ -10,8 +10,8 @@ position_file = 'software_engineer.txt'
 job_title = 'Software Engineer'
 
 # write selected employees to a file
-with open(employees_file, 'r') as file:
-   with open(position_file, 'w') as file:
-      for line in employees_file:
-         if job_title in employees_file:
-            file.write(job_title)
+with open('software_engineer.txt', 'w') as file1:
+   with open('it_company.csv', 'r') as file2:
+      for line in file2:
+         if job_title in line:
+            file1.write(line)
