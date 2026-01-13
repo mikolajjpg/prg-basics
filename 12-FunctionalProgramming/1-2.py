@@ -1,10 +1,10 @@
 # takes two numbers from keyboard
-n1 = input('Enter number: ')
-n2 = input('Enter number: ')
+n1 = int(input('Enter number: '))
+n2 = int(input('Enter number: '))
 
 # define an anonymous function
-x =int(n1)
-y=int(n2)
+x = n1
+y = n2
 mean = lambda x,y: (x+y)/2
 
 
