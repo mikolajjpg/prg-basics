@@ -13,16 +13,22 @@ recent = [508,500,512,499,492,511,503,476,501,509]
 #Filled bottles:     508,500,512,499,492,511,503,476,501,509
 #Incorrectly filled: 30%
 
+bottle_capacity = 500
+tolerance_pct = 2
+tolerance_val = bottle_capacity * (tolerance_pct / 100)
 
-tolerance_max = 510
-tolerance_min = 490
+min_val = bottle_capacity - tolerance_val
+max_val = bottle_capacity + tolerance_val
 
-def fill_validation(tmax,tmin,ostatnie):
-    return list(filter(lambda x : x >= tmin and tmax <= 510,ostatnie))
+def error_check(min_limit,max_limit):
+    return lambda x: x < min_limit or x > max_limit
 
-def procent_calc(fnc):
-    return list(filter(lambda x : (x/len(recent))*100,fnc))
+incorrect_bottles = list(filter(error_check(min_val,max_val),recent))
+percentage = (len(incorrect_bottles)/len(recent)) * 100
 
-print('Bottle capacity:     500ml')
-print('Filling tolerance:   2%')
-print(procent_calc(fill_validation(tolerance_max,tolerance_min,recent)))
+
+
+print(f'Bottle capacity:     {bottle_capacity}ml')
+print(f'Filling tolerance:   {tolerance_pct}%')
+print(f'Filled bottles:      {",".join(map(str, recent))}')
+print(f'Incorrectly filled: {int(percentage)}%')
